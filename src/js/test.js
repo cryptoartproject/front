@@ -53,6 +53,7 @@ document.querySelector('#api').addEventListener('click',()=>{
   callApi(api.server,{fff:'kkk'})
   .then(res => {
     console.log(res,'after click')
+    document.querySelector('#answer').innerHTML = JSON.stringify(res)
   })
 }, false)
 
