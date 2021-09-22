@@ -20,7 +20,7 @@ test() */
     console.log(res, 'PROVIDER')
   })
 
-  const s = 'https://cryptoartproject.herokuapp.com/'
+  const s = 'https://dev-cryptoart.herokuapp.com/'
   //const s = 'http://localhost:3001/'
 
   const api = {
