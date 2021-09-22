@@ -21,6 +21,7 @@ test() */
   })
 
   const s = 'https://dev-cryptoart.herokuapp.com/'
+  //heroku dep
   //const s = 'http://localhost:3001/'
 
   const api = {
