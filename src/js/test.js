@@ -20,8 +20,11 @@ test() */
     console.log(res, 'PROVIDER')
   })
 
+  const s = 'https://cryptoartproject.herokuapp.com/'
+  //const s = 'http://localhost:3001/'
+
   const api = {
-    server:'http://localhost:3001/',
+    server:s,
     endpoints:[
       {first: {url:'test', type:'post'}},
 
