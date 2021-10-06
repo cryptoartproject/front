@@ -20,9 +20,14 @@ test() */
     console.log(res, 'PROVIDER')
   })
 
-  const s = 'https://dev-cryptoart.herokuapp.com/'
+
+  const state = {
+    token: false
+  }
+
+  //const s = 'https://dev-cryptoart.herokuapp.com/'
   //heroku dep
-  //const s = 'http://localhost:3001/'
+  const s = 'http://localhost:5000/'
 
   const api = {
     server:s,
@@ -34,14 +39,15 @@ test() */
 console.log(api.endpoints[0].first.url)
 
 
-const callApi = (server, data) => {
+const callApi = (endpoint, data) => {
+
   return new Promise((resolve, reject) => {
-    fetch(server + 'test', {
+    fetch(endpoint, {
       method: 'POST',
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          //'Authorization': 'Token ' + state.tokenCalc
+          'Authorization': state.token
       },
       body: JSON.stringify(data)
     })
@@ -53,11 +59,47 @@ const callApi = (server, data) => {
 }
 
 
+
+
 document.querySelector('#api').addEventListener('click',()=>{
-  callApi(api.server,{fff:'kkk'})
+  callApi(s+'test',{fff:'kkk'})
   .then(res => {
     console.log(res,'after click')
     document.querySelector('#answer').innerHTML = JSON.stringify(res)
+  })
+}, false)
+
+
+document.querySelector('#login').addEventListener('click',() => {
+  const login = document.querySelector('#email').value
+  const pass = document.querySelector('#pass').value
+  
+  callApi(s+'login',{login, pass})
+  .then(res => {
+    console.log(res,'LOGIN')
+    state.all = res
+    state.token = res.token
+    console.log(state,'STATE')
+  })
+})
+
+
+document.querySelector('#register').addEventListener('click',() => {
+  const login = document.querySelector('#email').value
+  const pass = document.querySelector('#pass').value
+  
+  callApi(s+'signup',{login, pass})
+  .then(res => {
+    console.log(res,'SIGNUP')
+  })
+})
+
+
+document.querySelector('#protected').addEventListener('click', ()=>{
+  console.log(state.all.token)
+  callApi(s+'protected',state)
+  .then(res=>{
+    console.log(res,'protected')
   })
 }, false)
 
@@ -86,7 +128,50 @@ const m = moment()
 
 console.log(m)
 
-console.log('some script')
+console.log('some script.xxx')
+
+///////////////////
+let dep = 1.5
+let days = 1
+let bnb = 0
+let rate = 408
+
+const slider = document.getElementById("myRange");
+slider.oninput = () => {
+  bnb = parseFloat(slider.value)
+  moves()
+}
+
+const sliderDays = document.getElementById("myRange2");
+sliderDays.oninput = () => {
+  days = parseInt(sliderDays.value)
+  moves()
+}
+
+[...document.querySelectorAll('.dep')].map(d=>{
+  d.addEventListener('click',() => {
+    [...document.querySelectorAll('.dep')].map(x=>{x.classList.remove('sel')})
+    dep = parseFloat(d.getAttribute('data-v'))
+    d.classList.add('sel')
+    moves()
+  })
+})
+
+const moves = () => {
+  const percents = bnb*dep/100
+  let x = bnb
+  
+  for(let i = 1; i<=days; i++){
+   x = x+(x*dep/100)
+  }
+
+ const total = x
+ const totalWithoutDep = x - bnb
+
+ const str = `DEPO:${dep}% | BNB:${bnb} | DAYS:${days} | RateUSD:${rate} |<br> | TOTAL: ${total.toFixed(2)} | TOTAL-BODY: ${totalWithoutDep.toFixed(2)} | TOTAL*RATE: ${(total*rate).toFixed(2)}$`
+  console.log(str)
+  document.querySelector('#outVal').innerHTML = str
+}
 
 
 
