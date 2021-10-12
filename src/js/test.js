@@ -75,9 +75,9 @@ test() */
     token: false
   }
 
-  //const s = 'https://dev-cryptoart.herokuapp.com/'
+  const s = 'https://dev-cryptoart.herokuapp.com/'
   //heroku dep
-  const s = 'http://localhost:5000/'
+  //const s = 'http://localhost:5000/'
 
   const api = {
     server:s,
