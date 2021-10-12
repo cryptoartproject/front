@@ -18,10 +18,12 @@
     },
     "dependencies": {
         "@metamask/detect-provider": "^1.2.0",
+        "cryptocurrency-icons": "^0.18.0",
         "fs": "0.0.1-security",
         "jquery": "^3.4.1",
         "moment": "^2.29.1",
-        "unirest": "^0.6.0"
+        "unirest": "^0.6.0",
+        "web3": "^1.6.0"
     },
     "devDependencies": {
         "@babel/core": "^7.4.0",

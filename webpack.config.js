@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 const path = require("path");
 const fs = require('fs');
+require('babel-polyfill');
 
 // include the js minification plugin
 const TerserPlugin = require('terser-webpack-plugin');
@@ -34,7 +35,7 @@ function generateHtmlPlugins (templateDir) {
   const htmlPlugins = generateHtmlPlugins('./src/pages')
 
 module.exports = {
-    entry: ["./src/js/index.js", "./src/scss/main.scss"],
+    entry: ['babel-polyfill',"./src/js/index.js", "./src/scss/main.scss"],
     output: {
         filename: "js/index.[hash:8].js",
         path: path.join(__dirname, "./build/")

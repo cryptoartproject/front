@@ -7,7 +7,7 @@
 		<title>Home</title>
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/main.49c10a56.css" rel="stylesheet">
+		<link href="css/main.c688a53a.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -23,37 +23,51 @@
     </div>
 </header> -->
 
-		<h1>Start</h1>
-		<div>
-			<input type="text" id="email" placeholder="email" value="user@user.comzz">
-			<input type="text" id="pass" placeholder="password" value="123">
-		</div>
-		<div>
-			<button id="login">Login</button>
-			<button id="register">SignUp</button>
-			<button id="protected">Call protected API</button>
-		</div>
-		<div>
-			<button id="api">CallAPI</button>
-			<div id="answer"></div>
-		</div>
 
-		<div>
-			<h1>Calc</h1>
-			<div id="dep1" class="dep sel" data-v="1.5">Dep1 1-2% (average 1.5)</div>
-			<div id="dep2" class="dep" data-v="3">Dep1 2-4% (average 3)</div>
-			<div id="dep3" class="dep" data-v="5">Dep1 4-6% (average 5)</div>
-			<div class="slidecontainer">
-				BNB
-				<input type="range" min="0" max="100" value="1" step="0.05" class="slider" id="myRange">
+		<div id="page">
+			<div id="logo"><img src="../images/mlo.svg" alt=""></div>
+			<h1>SignIn / SignUp</h1>
+			<div>
+				<input type="text" id="email" placeholder="email" value="user@user.comzz">
+				<input type="text" id="pass" placeholder="password" value="123">
+				<input type="text" id="fromref" placeholder="refCode" value="">
 			</div>
-			<div class="slidecontainer">
-				Days
-				<input type="range" min="1" max="50" value="1" class="slider" id="myRange2">
+			<div>
+				<button id="login">Login</button>
+				<button id="register">SignUp</button>
+				<button id="protected">Call protected API</button>
 			</div>
-			<div id="outVal">OUT VALUE</div>
-		</div>
+			<div>
+				<button id="api">CallAPI</button>
+				<div id="answer"></div>
+			</div>
 
+			<div>
+				<h1>Balances</h1>
+
+				<div id="balanceBNB"></div>
+				<div id="balanceBTCB"></div>
+				<div id="balanceBUSD"></div>
+				<hr>
+				<div id="timeUpdate"></div>
+			</div>
+
+			<div>
+				<h1>Calc</h1>
+				<div id="dep1" class="dep sel" data-v="1.5">Dep1 1-2% (average 1.5)</div>
+				<div id="dep2" class="dep" data-v="3">Dep1 2-4% (average 3)</div>
+				<div id="dep3" class="dep" data-v="5">Dep1 4-6% (average 5)</div>
+				<div class="slidecontainer">
+					BNB
+					<input type="range" min="0" max="100" value="1" step="0.05" class="slider" id="myRange">
+				</div>
+				<div class="slidecontainer">
+					Days
+					<input type="range" min="1" max="50" value="1" class="slider" id="myRange2">
+				</div>
+				<div id="outVal">OUT VALUE</div>
+			</div>
+		</div>
 
 
 
@@ -63,7 +77,7 @@
         FOOTER
     </div>
 </footer> -->
-		<script type="text/javascript" src="js/index.99c18b0d.js"></script>
+		<script type="text/javascript" src="js/index.b39d2ea0.js"></script>
 	</body>
 
 </html>
